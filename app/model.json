@@ -195,6 +195,34 @@
       "name": "Ok"
     }
   ]
+}, 
+{
+  "id": "LocationActivityForm",
+  "title": "Activity",
+  "url": "/location/:locationKey/activity",
+  "formFieldList": [
+    {
+      "id": "activity",
+      "type": "autocomplete",
+      "name": "Activity",
+      "url": "/activity",
+      "defaultKey": "activityKey",
+      "form": "ActivityForm",
+      "width": 2
+    },
+    {
+      "type": "deleteButton",
+      "name": "Delete"
+    },
+    {
+      "type": "cancelButton",
+      "name": "Cancel"
+    },
+    {
+      "type": "okButton",
+      "name": "Ok"
+    }
+  ]
 }
         ],
         "pageList": [
@@ -314,10 +342,39 @@
                         "url": "/location",
                         "form": {
                             "form": "LocationForm"
-                        }
+                        }, 
+                         "page": "locationactivitypage"
                     }
                 ]
             },
+            {
+  "id": "locationactivitypage",
+  "elementList": [
+    {
+      "type": "backbutton"
+    },
+    {
+      "type": "formButton",
+      "name": "Edit Location",
+      "icon": "fa-edit",
+      "color": "yellow",
+      "form": {
+        "form": "LocationForm"
+      }
+    },
+    {
+      "type": "list",
+      "icon": "fa-futbol",
+      "color": "blue",
+      "search": true,
+      "url": "/location/:locationKey/activity",
+      "form": {
+        "form": "LocationActivityForm"
+      }
+    }
+  ]
+},
+
             {
                 "id": "groupspage",
                 "elementList": [
